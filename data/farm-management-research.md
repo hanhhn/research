@@ -70,7 +70,7 @@
 | **Cargill** (US) | iQuatic, iLayer | Tôm + gia cầm | Hệ sinh thái lớn, data science mạnh | Giá cao, phức tạp, không localize |
 | **AKVA Group** (Na Uy) | AKVA FLS | Cá + Tôm | IoT hardware tích hợp, 40+ năm | Giá rất cao ($10K+), target công nghiệp |
 | **ReelData** (Canada) | AI-powered | Cá nuôi | AI/image recognition | Focus Bắc Mỹ, chưa vào VN |
-| **eFishery** (Indonesia) | eFisheryFeeder | Tôm + Cá | Auto-feeder + app, đã raise $200M+ | Đối thủ đáng gờm nhất, chưa vào VN |
+| **eFishery** (Indonesia) | eFisheryFeeder | Tôm + Cá | Auto-feeder + app, đã raise $200M+ | ⚠️ **FRAUD SCANDAL 2024** — giả mạo BC tài chính, báo lỗ trong khi thực lỗ 578 tỷ IDR, claim 400K feeder thực tế chỉ 24K. CEO resigned. Công ty close to dissolution. **KHÔNG CÒN ĐỐI THỦ** |
 | **AquaMaof** (Israel) | SmartRAS | RAS systems | Công nghệ cao, Israel brand | Target công nghiệp, giá rất cao |
 | **Farmlogs/Granular** (US) | Crop + Livestock | Tổng hợp | Backed by Bayer/Corteva | Focus crop, không chuyên livestock |
 | **Hogstash** (US) | Hog management | Heo | Chuyên biệt heo | Chỉ Mỹ, không localize |
