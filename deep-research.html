@@ -3,75 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 3 Ý tưởng Startup — Research Chuyên sâu</title>
+    <title>Top 3 Ý tưởng Startup — Deep Research 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-text { background: linear-gradient(135deg, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .score-bar { height: 8px; border-radius: 4px; background: #e5e7eb; }
-        .score-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        .score-bar { height: 10px; border-radius: 5px; background: #e5e7eb; overflow: hidden; }
+        .score-fill { height: 100%; border-radius: 5px; transition: width 1s ease; }
         .verdict-go { background: linear-gradient(135deg, #10b981, #059669); }
         .verdict-conditional { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .tab-btn { border-bottom: 3px solid transparent; }
         .tab-active { border-bottom: 3px solid #6366f1; color: #6366f1; font-weight: 700; }
         .section { display: none; }
         .section.active { display: block; }
         .risk-high { background: #fef2f2; border-left: 4px solid #ef4444; }
         .risk-medium { background: #fffbeb; border-left: 4px solid #f59e0b; }
         .risk-low { background: #f0fdf4; border-left: 4px solid #10b981; }
+        .stat-card { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 1px solid #bae6fd; }
+        .collapse-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .collapse-content.open { max-height: 5000px; }
+        .arch-box { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px; padding: 8px 16px; text-align: center; font-size: 13px; }
+        .arch-arrow { color: #6366f1; font-size: 20px; }
+        details summary { cursor: pointer; list-style: none; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary::before { content: '▶ '; color: #6366f1; font-size: 12px; }
+        details[open] summary::before { content: '▼ '; }
+        .timeline-dot { width: 12px; height: 12px; border-radius: 50%; background: #6366f1; position: absolute; left: -6px; top: 4px; }
+        .timeline-line { position: absolute; left: -1px; top: 16px; bottom: 0; width: 2px; background: #e5e7eb; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
 <!-- Hero -->
-<div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-white py-16 px-4">
+<div class="bg-gradient-to-br from-indigo-700 via-purple-600 to-pink-500 text-white py-14 px-4">
     <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-black mb-4">🏆 Top 3 Ý tưởng Startup</h1>
-        <p class="text-xl opacity-90">Research chuyên sâu — April 2026</p>
-        <div class="mt-8 flex justify-center gap-4 flex-wrap">
-            <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm">🦐 Shrimp Farm App</span>
-            <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm">🛒 Multi-channel Selling</span>
-            <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm">📄 AI Document RAG</span>
+        <p class="text-sm opacity-70 mb-2">April 2026 — Startup Idea Deep Dive</p>
+        <h1 class="text-3xl md:text-5xl font-black mb-4">🏆 Top 3 Ý tưởng Startup</h1>
+        <p class="text-lg opacity-90 max-w-2xl mx-auto">Research chuyên sâu: thị trường, đối thủ, business model, technical feasibility, risks & verdict</p>
+        <div class="mt-6 flex justify-center gap-3 flex-wrap text-sm">
+            <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full">🦐 Shrimp Farm — 7.8</span>
+            <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full">🛒 Multi-channel — 7.1</span>
+            <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full">📄 AI RAG — 5.4</span>
         </div>
     </div>
 </div>
 
-<!-- Ranking Summary -->
+<!-- Ranking -->
 <div class="max-w-4xl mx-auto -mt-8 px-4">
-    <div class="bg-white rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-bold mb-6 text-center">Bảng Xếp Hạng</h2>
-        <div class="space-y-4">
-            <!-- #1 -->
-            <div class="flex items-center gap-4 p-4 bg-amber-50 rounded-xl border border-amber-200">
+    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+        <h2 class="text-xl font-bold mb-5 text-center">Bảng Xếp Hạng Tổng Hợp</h2>
+        <div class="space-y-3">
+            <div class="flex items-center gap-3 p-4 bg-amber-50 rounded-xl border border-amber-200 card-hover">
                 <div class="text-3xl">🥇</div>
                 <div class="flex-1">
-                    <div class="font-bold text-lg">Shrimp Farm App</div>
-                    <div class="text-sm text-gray-500">7.8/10 — 🟢 GO</div>
-                    <div class="score-bar mt-2"><div class="score-fill bg-gradient-to-r from-amber-400 to-amber-500" style="width:78%"></div></div>
+                    <div class="font-bold">Shrimp Farm App</div>
+                    <div class="text-sm text-gray-500">Niche không đối thủ, eFishery sụp đổ, data moat mạnh</div>
+                    <div class="score-bar mt-2"><div class="score-fill bg-amber-400" style="width:78%"></div></div>
                 </div>
-                <span class="text-2xl font-black text-amber-600">7.8</span>
+                <div class="text-right"><span class="text-2xl font-black text-amber-600">7.8</span><span class="text-xs text-gray-400">/10</span></div>
             </div>
-            <!-- #2 -->
-            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200 card-hover">
                 <div class="text-3xl">🥈</div>
                 <div class="flex-1">
-                    <div class="font-bold text-lg">Multi-channel Selling Tool</div>
-                    <div class="text-sm text-gray-500">7.1/10 — 🟢 GO</div>
-                    <div class="score-bar mt-2"><div class="score-fill bg-gradient-to-r from-gray-400 to-gray-500" style="width:71%"></div></div>
+                    <div class="font-bold">Multi-channel Selling Tool</div>
+                    <div class="text-sm text-gray-500">TikTok Shop bùng nổ, gap rõ ràng, fast revenue</div>
+                    <div class="score-bar mt-2"><div class="score-fill bg-gray-400" style="width:71%"></div></div>
                 </div>
-                <span class="text-2xl font-black text-gray-600">7.1</span>
+                <div class="text-right"><span class="text-2xl font-black text-gray-600">7.1</span><span class="text-xs text-gray-400">/10</span></div>
             </div>
-            <!-- #3 -->
-            <div class="flex items-center gap-4 p-4 bg-orange-50 rounded-xl border border-orange-200">
+            <div class="flex items-center gap-3 p-4 bg-orange-50 rounded-xl border border-orange-200 card-hover">
                 <div class="text-3xl">🥉</div>
                 <div class="flex-1">
-                    <div class="font-bold text-lg">AI Document RAG</div>
-                    <div class="text-sm text-gray-500">5.4/10 — 🟡 Conditional GO</div>
-                                       <div class="score-bar mt-2"><div class="score-fill bg-gradient-to-r from-orange-400 to-orange-500" style="width:54%"></div></div>
+                    <div class="font-bold">AI Document RAG</div>
+                    <div class="text-sm text-gray-500">Commoditization risk cao, chỉ vertical-specific</div>
+                    <div class="score-bar mt-2"><div class="score-fill bg-orange-400" style="width:54%"></div></div>
                 </div>
-                <span class="text-2xl font-black text-orange-600">5.4</span>
+                <div class="text-right"><span class="text-2xl font-black text-orange-600">5.4</span><span class="text-xs text-gray-400">/10</span></div>
             </div>
         </div>
     </div>
@@ -80,196 +90,655 @@
 <!-- Tabs -->
 <div class="max-w-4xl mx-auto mt-8 px-4">
     <div class="flex border-b border-gray-200 gap-1 overflow-x-auto">
-        <button onclick="showTab('shrimp')" id="tab-shrimp" class="tab-active px-6 py-3 text-sm whitespace-nowrap">🦐 Shrimp Farm</button>
-        <button onclick="showTab('selling')" id="tab-selling" class="px-6 py-3 text-sm text-gray-500 whitespace-nowrap">🛒 Multi-channel</button>
-        <button onclick="showTab('rag')" id="tab-rag" class="px-6 py-3 text-sm text-gray-500 whitespace-nowrap">📄 AI RAG</button>
-        <button onclick="showTab('compare')" id="tab-compare" class="px-6 py-3 text-sm text-gray-500 whitespace-nowrap">📊 So sánh</button>
+        <button onclick="showTab('shrimp')" id="tab-shrimp" class="tab-active tab-btn px-4 py-3 text-sm whitespace-nowrap">🦐 Shrimp Farm</button>
+        <button onclick="showTab('selling')" id="tab-selling" class="tab-btn px-4 py-3 text-sm text-gray-500 whitespace-nowrap">🛒 Multi-channel</button>
+        <button onclick="showTab('rag')" id="tab-rag" class="tab-btn px-4 py-3 text-sm text-gray-500 whitespace-nowrap">📄 AI RAG</button>
+        <button onclick="showTab('compare')" id="tab-compare" class="tab-btn px-4 py-3 text-sm text-gray-500 whitespace-nowrap">📊 So sánh</button>
     </div>
 </div>
 
-<!-- SHRIMP FARM -->
+<!-- ==================== SHRIMP FARM ==================== -->
 <div id="section-shrimp" class="section active max-w-4xl mx-auto px-4 py-8 space-y-6">
 
+    <!-- Header -->
     <div class="bg-white rounded-2xl shadow p-6">
-        <h3 class="text-xl font-bold mb-2">🦐 Shrimp Farm App — Vietnam</h3>
-        <span class="inline-block verdict-go text-white text-xs font-bold px-3 py-1 rounded-full mb-4">🟢 GO</span>
-        <p class="text-gray-600 mb-4">App quản lý nuôi tôm thông minh cho nông dân Việt Nam — thị trường $3.5B xuất khẩu, 80% smallholder, competition gần như BẰNG KHÔNG.</p>
+        <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-2xl font-bold">🦐 Shrimp Farm App — Vietnam</h3>
+            <span class="verdict-go text-white text-xs font-bold px-3 py-1 rounded-full">🟢 GO</span>
+        </div>
+        <p class="text-gray-600">App quản lý nuôi tôm thông minh cho nông dân Việt Nam — thị trường $3.5B, competition gần như BẰNG KHÔNG sau khi eFishery sụp đổ.</p>
+    </div>
 
-        <h4 class="font-bold mb-3">📊 Thị trường</h4>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            <div class="bg-blue-50 rounded-xl p-4 text-center">
-                <div class="text-2xl font-black text-blue-600">$3.5B</div>
+    <!-- Market Stats -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">📊 Thị Trường Tôm Việt Nam</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <div class="stat-card rounded-xl p-4 text-center">
+                <div class="text-2xl font-black text-blue-700">$3.5B</div>
                 <div class="text-xs text-gray-500">Xuất khẩu/năm</div>
             </div>
-            <div class="bg-green-50 rounded-xl p-4 text-center">
-                <div class="text-2xl font-black text-green-600">1.1M</div>
+            <div class="stat-card rounded-xl p-4 text-center">
+                <div class="text-2xl font-black text-blue-700">1.1M</div>
                 <div class="text-xs text-gray-500">Tấn/năm</div>
             </div>
-            <div class="bg-purple-50 rounded-xl p-4 text-center">
-                <div class="text-2xl font-black text-purple-600">730K</div>
+            <div class="stat-card rounded-xl p-4 text-center">
+                <div class="text-2xl font-black text-blue-700">730K</div>
                 <div class="text-xs text-gray-500">Ha mặt nước</div>
             </div>
-            <div class="bg-amber-50 rounded-xl p-4 text-center">
-                <div class="text-2xl font-black text-amber-600">80%</div>
-                <div class="text-xs text-gray-500">Smallholder</div>
+            <div class="stat-card rounded-xl p-4 text-center">
+                <div class="text-2xl font-black text-blue-700">5-7%</div>
+                <div class="text-xs text-gray-500">CAGR</div>
             </div>
         </div>
 
-        <h4 class="font-bold mb-3">🎯 Score chi tiết</h4>
-        <div class="space-y-2">
-            <div class="flex items-center gap-2"><span class="w-32 text-sm">Market Size</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:80%"></div></div><span class="text-sm font-bold">8/10</span></div>
-            <div class="flex items-center gap-2"><span class="w-32 text-sm">Competition</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:90%"></div></div><span class="text-sm font-bold">9/10</span></div>
-            <div class="flex items-center gap-2"><span class="w-32 text-sm">Tech Feasibility</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:70%"></div></div><span class="text-sm font-bold">7/10</span></div>
-            <div class="flex items-center gap-2"><span class="w-32 text-sm">Profitability</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:70%"></div></div><span class="text-sm font-bold">7/10</span></div>
-            <div class="flex items-center gap-2"><span class="w-32 text-sm">Defensibility</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:80%"></div></div><span class="text-sm font-bold">8/10</span></div>
-        </div>
+        <details class="mb-4">
+            <summary class="font-bold text-sm text-indigo-600 mb-2">Cấu trúc thị trường</summary>
+            <div class="pl-4 text-sm space-y-2 text-gray-700">
+                <p><strong>Tôm thẻ chân trắng (vannamei)</strong>: 75%+ sản lượng, tăng nhanh, nuôi công nghiệp</p>
+                <p><strong>Tôm sú (monodon)</strong>: 25%, giá cao hơn, giảm dần</p>
+                <p><strong>80% hộ nhỏ</strong> (&lt;5ha), <strong>20% công nghiệp</strong></p>
+                <p><strong>Vùng trọng điểm</strong>: ĐBSCL — Cà Mau (280K ha), Bạc Liêu, Sóc Trăng, Trà Vinh, Bến Tre. Miền Trung — Nghệ An, Hà Tĩnh, Khánh Hòa</p>
+                <p><strong>Xuất khẩu</strong>: Mỹ (lớn nhất), EU, Nhật, Trung Quốc, Hàn Quốc</p>
+            </div>
+        </details>
 
-        <h4 class="font-bold mt-6 mb-3">⚡ Key Insight</h4>
-        <div class="risk-low p-4 rounded-lg">
-            <strong>eFishery (Indonesia) đã sụp đổ</strong> — Fraud $300M+, CEO resign, criminal investigation. Đối thủ đáng sợ nhất đã tự hủy. VN market gần như trống.
+        <details class="mb-4">
+            <summary class="font-bold text-sm text-indigo-600 mb-2">Chi phí sản xuất & Dịch bệnh</summary>
+            <div class="pl-4 text-sm space-y-2 text-gray-700">
+                <p><strong>Chi phí:</strong> Thức ăn 50-65% | Giống 10-15% | Hóa chất 10-15% | Nhân công 10-20%</p>
+                <p><strong>FCR</strong>: 1.3-1.8 (thẻ chân trắng), 2.0-2.5 (tôm sú)</p>
+                <div class="mt-3 p-3 bg-red-50 rounded-lg">
+                    <p class="font-bold text-red-700">⚠️ Dịch bệnh — Thiệt hại kinh tế</p>
+                    <p><strong>Đốm trắng</strong>: Tỷ lệ chết 80-100% trong 3-10 ngày</p>
+                    <p><strong>Đầu vàng (YHV)</strong>: Tỷ lệ chết 100% trong 3-5 ngày</p>
+                    <p><strong>EMS/AHPND</strong>: Thiệt hại toàn ngành ~$1 tỷ+/năm toàn cầu</p>
+                    <p><strong>EHP</strong>: Giảm tăng trưởng 30-50%</p>
+                    <p class="mt-1 italic">→ Nông dân thường phát hiện muộn → mất trắng cả vụ → <strong>Pain point cực lớn cho monitoring app</strong></p>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary class="font-bold text-sm text-indigo-600 mb-2">Smartphone & Tech Adoption nông thôn VN</summary>
+            <div class="pl-4 text-sm space-y-1 text-gray-700">
+                <p>• Smartphone penetration nông thôn: <strong>~65-70%</strong> (2024)</p>
+                <p>• Zalo: <strong>75M+ users</strong> (phổ biến nông thôn)</p>
+                <p>• 4G coverage: ~95% dân số</p>
+                <p>• Nông dân trẻ (30-45) adopt tech nhanh</p>
+                <p>• Barriers: Ngôn ngữ, digital literacy, cost</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- eFishery Scandal -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">💥 eFishery (Indonesia) — SỤP ĐỔ 2024</h4>
+        <div class="risk-low p-4 rounded-lg mb-4">
+            <p class="font-bold">Đối thủ đáng sợ nhất đã tự hủy — Window of opportunity đang mở rộng</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+                <p class="font-bold mb-2">Trước fraud:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>Thành lập 2013, Bandung, Indonesia</li>
+                    <li>Series C: $90M (Temasek, SoftBank)</li>
+                    <li>Series D: $200M — <strong>Unicorn $1B</strong></li>
+                    <li>Claim 400,000 auto-feeders</li>
+                </ul>
+            </div>
+            <div>
+                <p class="font-bold mb-2 text-red-700">Fraud phát hiện:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>2 bộ sổ sách từ 2018</li>
+                    <li><strong>400K feeders → thực 24K (ảo 16x!)</strong></li>
+                    <li>Revenue phồng 4.8x, overstate $600M</li>
+                    <li>Shell companies fake revenue</li>
+                    <li>CEO + Co-founder <strong>resigned</strong></li>
+                    <li>300 layoff, <strong>criminal investigation</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Competition -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">🏆 Đối Thủ Cạnh Tranh</h4>
+        <div class="overflow-x-auto mb-4">
+            <table class="w-full text-sm">
+                <thead><tr class="bg-gray-100 text-left"><th class="p-2">Đối thủ</th><th class="p-2">Focus</th><th class="p-2">Threat</th><th class="p-2">Note</th></tr></thead>
+                <tbody>
+                    <tr class="border-b"><td class="p-2">eFishery 🇮🇩</td><td class="p-2">Aquaculture IoT</td><td class="p-2 text-green-600 font-bold">❌ Sụp đổ</td><td class="p-2 text-gray-500">Fraud $600M+</td></tr>
+                    <tr class="border-b"><td class="p-2">MimosaTEK 🇻🇳</td><td class="p-2">IoT crops</td><td class="p-2 text-green-600">Thấp</td><td class="p-2 text-gray-500">Chỉ cây trồng, không tôm</td></tr>
+                    <tr class="border-b"><td class="p-2">AKVA Group 🇳🇴</td><td class="p-2">Aquaculture industrial</td><td class="p-2 text-green-600">Thấp</td><td class="p-2 text-gray-500">$10K+, không phù hợp VN</td></tr>
+                    <tr class="border-b"><td class="p-2">Viettel/FPT 🇻🇳</td><td class="p-2">IoT/AI</td><td class="p-2 text-yellow-600">TB</td><td class="p-2 text-gray-500">B2G focus, không farmer</td></tr>
+                    <tr><td class="p-2">Farmdy, Sugsar</td><td class="p-2">Farm app</td><td class="p-2 text-green-600">❌ Không tồn tại</td><td class="p-2 text-gray-500">Không tìm thấy</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="risk-low p-4 rounded-lg text-sm">
+            <strong>Kết luận:</strong> Cạnh tranh RẤT THẤP. Không có local dominant player. Global players quá đắt, không localize. Window đang mở rộng.
+        </div>
+    </div>
+
+    <!-- Revenue Model -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">💰 Revenue Model</h4>
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+                <p class="font-bold text-sm mb-2">Gợi ý models:</p>
+                <div class="space-y-2 text-sm">
+                    <div class="bg-indigo-50 p-3 rounded-lg"><strong>Freemium</strong> — Free đủ tốt → Premium $3-10/tháng</div>
+                    <div class="bg-indigo-50 p-3 rounded-lg"><strong>Marketplace</strong> — Kết nối farmer-buyer, phí 2-5%</div>
+                    <div class="bg-indigo-50 p-3 rounded-lg"><strong>Data</strong> — Anonymized data cho feed companies, buyers</div>
+                    <div class="bg-indigo-50 p-3 rounded-lg"><strong>Vet telemedicine</strong> — $1-5/call cho tư vấn dịch bệnh</div>
+                    <div class="bg-indigo-50 p-3 rounded-lg"><strong>B2G</strong> — Traceability compliance tools</div>
+                </div>
+            </div>
+            <div>
+                <p class="font-bold text-sm mb-2">Chính sách hỗ trợ:</p>
+                <div class="space-y-2 text-sm text-gray-700">
+                    <p>• <strong>Decision 25/QĐ-BNNMT (1/2026)</strong>: Traceability bắt buộc</p>
+                    <p>• <strong>Decision 250/QD-TTg</strong>: Chuyển đổi số quốc gia</p>
+                    <p>• <strong>FAO CPF 2022-2026</strong>: Climate-resilient agriculture</p>
+                    <p class="mt-2 italic">→ Chính phủ đang push → farmer SẼ cần tool</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Risks -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">⚠️ Risks</h4>
+        <div class="space-y-3">
+            <div class="risk-high p-4 rounded-lg text-sm"><strong>🔴 Willingness to pay thấp</strong> — Nông dân quen free. Mitigation: Freemium, giá $2-5/tháng, value rõ ràng (giảm死亡率)</div>
+            <div class="risk-medium p-4 rounded-lg text-sm"><strong>🟡 Field sales expensive</strong> — Khó reach farmer. Mitigation: Partner extension officers, Zalo marketing</div>
+            <div class="risk-medium p-4 rounded-lg text-sm"><strong>🟡 Connectivity nông thôn</strong> — 4G tốt nhưng có vùng yếu. Mitigation: Offline-first, sync khi có mạng</div>
+            <div class="risk-medium p-4 rounded-lg text-sm"><strong>🟡 Dịch bệnh wipes customers</strong> — Farmer mất trắng = không trả tiền. Mitigation: Diversify region, insurance partnership</div>
+        </div>
+    </div>
+
+    <!-- Score -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">🎯 Score Chi Tiết</h4>
+        <div class="space-y-3">
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Market Size</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:80%"></div></div><span class="text-sm font-bold w-12 text-right">8/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Competition</span><div class="flex-1 score-bar"><div class="score-fill bg-green-500" style="width:90%"></div></div><span class="text-sm font-bold w-12 text-right">9/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Tech Feasibility</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:70%"></div></div><span class="text-sm font-bold w-12 text-right">7/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Profitability</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:70%"></div></div><span class="text-sm font-bold w-12 text-right">7/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Timing</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:80%"></div></div><span class="text-sm font-bold w-12 text-right">8/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Defensibility</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:80%"></div></div><span class="text-sm font-bold w-12 text-right">8/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Scalability</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:70%"></div></div><span class="text-sm font-bold w-12 text-right">7/10</span></div>
         </div>
     </div>
 </div>
 
-<!-- MULTI-CHANNEL SELLING -->
+<!-- ==================== MULTI-CHANNEL SELLING ==================== -->
 <div id="section-selling" class="section max-w-4xl mx-auto px-4 py-8 space-y-6">
 
     <div class="bg-white rounded-2xl shadow p-6">
-        <h3 class="text-xl font-bold mb-2">🛒 Multi-channel Selling Tool</h3>
-        <span class="inline-block verdict-go text-white text-xs font-bold px-3 py-1 rounded-full mb-4">🟢 GO</span>
-        <p class="text-gray-600 mb-4">Quản lý bán hàng đồng thời trên Shopee, TikTok Shop, Lazada — 300K+ sellers cần tool, gap rõ ràng trong market.</p>
+        <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-2xl font-bold">🛒 Multi-channel Selling Tool</h3>
+            <span class="verdict-go text-white text-xs font-bold px-3 py-1 rounded-full">🟢 GO</span>
+        </div>
+        <p class="text-gray-600">Quản lý bán hàng đồng thời trên Shopee, TikTok Shop, Lazada. 300K+ sellers cần tool, gap rõ ràng.</p>
+    </div>
 
-        <h4 class="font-bold mb-3">📊 Thị trường TMĐT VN</h4>
-        <div class="overflow-x-auto mb-6">
+    <!-- Market -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">📊 Thị Trường TMĐT VN 2024-2025</h4>
+        <div class="overflow-x-auto mb-4">
             <table class="w-full text-sm">
-                <thead><tr class="bg-gray-100"><th class="p-2 text-left">Sàn</th><th class="p-2">GMV 2024</th><th class="p-2">Growth</th><th class="p-2">Sellers</th></tr></thead>
+                <thead><tr class="bg-gray-100"><th class="p-3 text-left">Sàn</th><th class="p-3">GMV 2024</th><th class="p-3">YoY Growth</th><th class="p-3">Sellers</th><th class="p-3 text-left">Ghi chú</th></tr></thead>
                 <tbody>
-                    <tr class="border-b"><td class="p-2 font-bold">Shopee</td><td class="p-2 text-center">$12-14B</td><td class="p-2 text-center text-green-600">15-20%</td><td class="p-2 text-center">300K+</td></tr>
-                    <tr class="border-b"><td class="p-2 font-bold">TikTok Shop</td><td class="p-2 text-center">$3-4B</td><td class="p-2 text-center text-green-600 font-bold">100%+</td><td class="p-2 text-center">50K+</td></tr>
-                    <tr class="border-b"><td class="p-2 font-bold">Lazada</td><td class="p-2 text-center">$3-5B</td><td class="p-2 text-center text-yellow-600">5-10%</td><td class="p-2 text-center">150K+</td></tr>
-                    <tr class="border-b"><td class="p-2 font-bold">Tiki</td><td class="p-2 text-center">$0.5-1B</td><td class="p-2 text-center text-red-600">Stagnant</td><td class="p-2 text-center">30K+</td></tr>
+                    <tr class="border-b"><td class="p-3 font-bold">Shopee</td><td class="p-3 text-center">$12-14B</td><td class="p-3 text-center text-green-600">+15-20%</td><td class="p-3 text-center">300K+</td><td class="p-3 text-gray-500">#1, slowing</td></tr>
+                    <tr class="border-b bg-green-50"><td class="p-3 font-bold">TikTok Shop</td><td class="p-3 text-center">$3-4B</td><td class="p-3 text-center text-green-600 font-bold">+100%+</td><td class="p-3 text-center">50K+</td><td class="p-3 text-green-700 font-bold">Bùng nổ 🔥</td></tr>
+                    <tr class="border-b"><td class="p-3 font-bold">Lazada</td><td class="p-3 text-center">$3-5B</td><td class="p-3 text-center text-yellow-600">+5-10%</td><td class="p-3 text-center">150K+</td><td class="p-3 text-gray-500">Giảm share</td></tr>
+                    <tr class="border-b"><td class="p-3 font-bold">Tiki</td><td class="p-3 text-center">$0.5-1B</td><td class="p-3 text-center text-red-600">Stagnant</td><td class="p-3 text-center">30K+</td><td class="p-3 text-gray-500">Niche sách</td></tr>
+                    <tr><td class="p-3 font-bold">Sendo</td><td class="p-3 text-center">$0.3-0.5B</td><td class="p-3 text-center text-red-600">Stagnant</td><td class="p-3 text-center">20K+</td><td class="p-3 text-gray-500">Tier 2/3</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+            <div class="stat-card rounded-xl p-3 text-center">
+                <div class="text-xl font-black text-blue-700">$20-25B</div>
+                <div class="text-xs text-gray-500">Tổng GMV TMĐT VN</div>
+            </div>
+            <div class="stat-card rounded-xl p-3 text-center">
+                <div class="text-xl font-black text-green-700">300K+</div>
+                <div class="text-xs text-gray-500">Active sellers cần tool</div>
+            </div>
+            <div class="stat-card rounded-xl p-3 text-center">
+                <div class="text-xl font-black text-purple-700">80%+</div>
+                <div class="text-xs text-gray-500">SME, bán 2-3 sàn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pain Points -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">😣 Pain Points</h4>
+        <div class="space-y-2">
+            <div class="risk-high p-3 rounded-lg text-sm"><strong>🔴 Tồn kho đồng bộ</strong> — Oversell #1. Bán trên 3 sàn, stock không sync → phạt/hủy đơn</div>
+            <div class="risk-high p-3 rounded-lg text-sm"><strong>🔴 Xử lý đơn hàng</strong> — Mỗi sàn format khác, cần centralize để ship</div>
+            <div class="risk-high p-3 rounded-lg text-sm"><strong>🔴 Đồng bộ giá</strong> — Flash sale Shopee vs TikTok vs Lazada, update tay dễ sai</div>
+            <div class="risk-medium p-3 rounded-lg text-sm"><strong>🟡 Chat đa kênh</strong> — Shopee chat + TikTok chat + Lazada chat = 10 tabs</div>
+            <div class="risk-medium p-3 rounded-lg text-sm"><strong>🟡 Reporting</strong> — Cuối ngày không biết lãi lỗ, data rải rác</div>
+            <div class="risk-low p-3 rounded-lg text-sm"><strong>🟢 Listing đồng loạt</strong> — Upload 1 lần, publish nhiều sàn</div>
+        </div>
+    </div>
+
+    <!-- Competition -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">🏆 Đối Thủ</h4>
+        <div class="overflow-x-auto mb-4">
+            <table class="w-full text-sm">
+                <thead><tr class="bg-gray-100 text-left"><th class="p-2">Tool</th><th class="p-2">Funding</th><th class="p-2">Điểm mạnh</th><th class="p-2">Điểm yếu</th><th class="p-2">Giá</th></tr></thead>
+                <tbody>
+                    <tr class="border-b"><td class="p-2 font-bold">Sapo</td><td class="p-2">Series B $5M+</td><td class="p-2">POS mạnh, brand lớn</td><td class="p-2 text-red-600">MC basics, UI cũ</td><td class="p-2">300K-2M</td></tr>
+                    <tr class="border-b"><td class="p-2 font-bold">KiotViet</td><td class="p-2">Series C $15M+</td><td class="p-2">POS #1</td><td class="p-2 text-red-600">MC yếu, ít tích hợp</td><td class="p-2">200K-1.5M</td></tr>
+                    <tr class="border-b"><td class="p-2 font-bold">Nhanh.vn</td><td class="p-2">Bootstrapped</td><td class="p-2">Shipping tốt</td><td class="p-2 text-red-600">UI outdated</td><td class="p-2">200K-800K</td></tr>
+                    <tr class="border-b"><td class="p-2 font-bold">Pancake</td><td class="p-2">Seed</td><td class="p-2">TikTok-specific</td><td class="p-2 text-red-600">Chỉ TikTok</td><td class="p-2">Free-Freemium</td></tr>
+                    <tr><td class="p-2 font-bold">Sello</td><td class="p-2">Seed</td><td class="p-2">UI modern, MC focus</td><td class="p-2 text-red-600">Mới, ít features</td><td class="p-2">300K-1M</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="risk-low p-4 rounded-lg text-sm">
+            <strong>Gap rõ ràng:</strong> Không ai làm excellent MC selling trên Shopee + TikTok + Lazada. Sapo/KiotViet = POS-first. Pancake = chỉ TikTok. Cơ hội: <strong>Multi-channel-first, API-first, modern UI</strong>.
+        </div>
+    </div>
+
+    <!-- Technical -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">🔧 Technical Feasibility</h4>
+        <div class="space-y-3 mb-4">
+            <details>
+                <summary class="font-bold text-sm text-indigo-600 mb-1">Shopee Open Platform</summary>
+                <div class="pl-4 text-sm text-gray-700">
+                    <p>✅ REST API v2.0, well-documented | Product, Order, Inventory, Logistics, Chat, Payment</p>
+                    <p>✅ Webhook support | ⚠️ Rate limit: 1K-5K req/min | ⚠️ Cần approved partner (1-2 tuần)</p>
+                </div>
+            </details>
+            <details>
+                <summary class="font-bold text-sm text-indigo-600 mb-1">TikTok Shop API</summary>
+                <div class="pl-4 text-sm text-gray-700">
+                    <p>✅ Open API v202309 (stable) | Product, Order, Fulfillment, Chat</p>
+                    <p>⚠️ Rate limit chặt hơn | ⚠️ Policy thay đổi thường xuyên | ⚠️ Approval cần business verification</p>
+                </div>
+            </details>
+            <details>
+                <summary class="font-bold text-sm text-indigo-600 mb-1">Lazada Open Platform</summary>
+                <div class="pl-4 text-sm text-gray-700">
+                    <p>✅ API lâu đời, stable, full features</p>
+                    <p>⚠️ Rate limit: 200-500 req/min (thấp) | ⚠️ Docs kém hơn Shopee</p>
+                </div>
+            </details>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg text-sm">
+            <p class="font-bold mb-2">Architecture:</p>
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <div class="arch-box">React Dashboard</div>
+                <span class="arch-arrow">↓</span>
+                <div class="arch-box">API Gateway<br><span class="text-xs text-gray-400">Go/NestJS</span></div>
+                <span class="arch-arrow">↓</span>
+                <div class="arch-box">Platform Adapters<br><span class="text-xs text-gray-400">Shopee | TikTok | Lazada</span></div>
+                <span class="arch-arrow">↓</span>
+                <div class="arch-box">Sync Engine<br><span class="text-xs text-gray-400">Redis Queue</span></div>
+                <span class="arch-arrow">↓</span>
+                <div class="arch-box">PostgreSQL + Redis</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Business Model -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">💰 Business Model</h4>
+        <div class="overflow-x-auto mb-4">
+            <table class="w-full text-sm">
+                <thead><tr class="bg-gray-100"><th class="p-3 text-left">Tier</th><th class="p-3">Price/tháng</th><th class="p-3 text-left">Target & Features</th></tr></thead>
+                <tbody>
+                    <tr class="border-b"><td class="p-3">Free</td><td class="p-3 text-center">0</td><td class="p-3">Trial: 1 sàn, 50 SKUs, 100 orders</td></tr>
+                    <tr class="border-b"><td class="p-3 font-bold">Starter</td><td class="p-3 text-center font-bold">299K VND</td><td class="p-3">Small seller: 3 sàn, 500 SKUs, 1K orders</td></tr>
+                    <tr class="border-b"><td class="p-3 font-bold">Pro</td><td class="p-3 text-center font-bold">799K VND</td><td class="p-3">Growing: All sàn, 5K SKUs, 10K orders</td></tr>
+                    <tr><td class="p-3 font-bold">Business</td><td class="p-3 text-center font-bold">1.99M VND</td><td class="p-3">Enterprise: Unlimited + API + support</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <h4 class="font-bold mb-3">🏆 Đối thủ</h4>
-        <div class="grid md:grid-cols-2 gap-3 mb-6">
-            <div class="bg-gray-50 p-3 rounded-lg"><strong>Sapo</strong> — POS-first, multi-channel yếu, UI cũ</div>
-            <div class="bg-gray-50 p-3 rounded-lg"><strong>KiotViet</strong> — Market share POS #1, nhưng multi-channel yếu</div>
-            <div class="bg-gray-50 p-3 rounded-lg"><strong>Pancake</strong> — Chỉ TikTok Shop, không multi-channel</div>
-            <div class="bg-gray-50 p-3 rounded-lg"><strong>Nhanh.vn</strong> — Shipping tốt, UI outdated</div>
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+            <div class="bg-green-50 p-3 rounded-lg text-center text-sm">
+                <div class="font-bold text-green-700">ARPU: 500K VND/mo</div>
+                <div class="text-gray-500">~$20</div>
+            </div>
+            <div class="bg-green-50 p-3 rounded-lg text-center text-sm">
+                <div class="font-bold text-green-700">LTV/CAC: 18x</div>
+                <div class="text-gray-500">$360 LTV / $20 CAC</div>
+            </div>
+            <div class="bg-green-50 p-3 rounded-lg text-center text-sm">
+                <div class="font-bold text-green-700">Breakeven: Year 2</div>
+                <div class="text-gray-500">9B VND revenue</div>
+            </div>
         </div>
 
-        <h4 class="font-bold mb-3">💰 Business Model</h4>
-        <div class="overflow-x-auto mb-6">
-            <table class="w-full text-sm">
-                <thead><tr class="bg-gray-100"><th class="p-2 text-left">Tier</th><th class="p-2">Price/tháng</th><th class="p-2">Target</th></tr></thead>
-                <tbody>
-                    <tr class="border-b"><td class="p-2">Free</td><td class="p-2 text-center">0</td><td class="p-2">Trial: 1 sàn, 50 SKUs</td></tr>
-                    <tr class="border-b"><td class="p-2 font-bold">Starter</td><td class="p-2 text-center">299K VND</td><td class="p-2">3 sàn, 500 SKUs</td></tr>
-                    <tr class="border-b"><td class="p-2 font-bold">Pro</td><td class="p-2 text-center">799K VND</td><td class="p-2">All sàn, 5K SKUs</td></tr>
-                    <tr class="border-b"><td class="p-2 font-bold">Business</td><td class="p-2 text-center">1.99M VND</td><td class="p-2">Unlimited + API</td></tr>
-                </tbody>
-            </table>
-        </div>
+        <details>
+            <summary class="font-bold text-sm text-indigo-600 mb-1">Revenue Projections</summary>
+            <div class="overflow-x-auto mt-2">
+                <table class="w-full text-sm">
+                    <thead><tr class="bg-gray-100"><th class="p-2"></th><th class="p-2">Y1</th><th class="p-2">Y2</th><th class="p-2">Y3</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b"><td class="p-2 font-bold">Users</td><td class="p-2 text-center">5K</td><td class="p-2 text-center">20K</td><td class="p-2 text-center">50K</td></tr>
+                        <tr class="border-b"><td class="p-2 font-bold">Paying</td><td class="p-2 text-center">300</td><td class="p-2 text-center">1.5K</td><td class="p-2 text-center">5K</td></tr>
+                        <tr class="border-b"><td class="p-2 font-bold">Revenue</td><td class="p-2 text-center">1.8B</td><td class="p-2 text-center">9B</td><td class="p-2 text-center">30B</td></tr>
+                        <tr class="border-b"><td class="p-2 font-bold">Costs</td><td class="p-2 text-center">3B</td><td class="p-2 text-center">5B</td><td class="p-2 text-center">10B</td></tr>
+                        <tr><td class="p-2 font-bold">Profit</td><td class="p-2 text-center text-red-600">-1.2B</td><td class="p-2 text-center text-green-600">+4B</td><td class="p-2 text-center text-green-600">+20B</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
 
-        <h4 class="font-bold mb-3">⚡ Why Now?</h4>
-        <div class="risk-medium p-4 rounded-lg">
-            TikTok Shop đang bùng nổ + Multi-channel trở thành <strong>bắt buộc</strong>. Window 6 tháng trước Sapo/KiotViet wakeup. LTV/CAC = 18x.
+        <div class="mt-4">
+            <p class="font-bold text-sm mb-2">GTM Strategy:</p>
+            <div class="grid md:grid-cols-3 gap-3 text-sm">
+                <div class="bg-indigo-50 p-3 rounded-lg"><strong>Phase 1</strong> (M1-6)<br>TikTok Shop sellers — pain cao nhất</div>
+                <div class="bg-indigo-50 p-3 rounded-lg"><strong>Phase 2</strong> (M6-12)<br>+ Shopee integration</div>
+                <div class="bg-indigo-50 p-3 rounded-lg"><strong>Phase 3</strong> (Y2)<br>+ Lazada, full multi-channel → SEA</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Score -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">🎯 Score Chi Tiết</h4>
+        <div class="space-y-3">
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Market Size</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:80%"></div></div><span class="text-sm font-bold w-12 text-right">8/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Competition</span><div class="flex-1 score-bar"><div class="score-fill bg-yellow-500" style="width:60%"></div></div><span class="text-sm font-bold w-12 text-right">6/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Tech Feasibility</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:70%"></div></div><span class="text-sm font-bold w-12 text-right">7/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Profitability</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:80%"></div></div><span class="text-sm font-bold w-12 text-right">8/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Timing</span><div class="flex-1 score-bar"><div class="score-fill bg-green-500" style="width:90%"></div></div><span class="text-sm font-bold w-12 text-right">9/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Defensibility</span><div class="flex-1 score-bar"><div class="score-fill bg-orange-500" style="width:50%"></div></div><span class="text-sm font-bold w-12 text-right">5/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Scalability</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:70%"></div></div><span class="text-sm font-bold w-12 text-right">7/10</span></div>
         </div>
     </div>
 </div>
 
-<!-- AI RAG -->
+<!-- ==================== AI RAG ==================== -->
 <div id="section-rag" class="section max-w-4xl mx-auto px-4 py-8 space-y-6">
 
     <div class="bg-white rounded-2xl shadow p-6">
-        <h3 class="text-xl font-bold mb-2">📄 AI Document RAG</h3>
-        <span class="inline-block verdict-conditional text-white text-xs font-bold px-3 py-1 rounded-full mb-4">🟡 CONDITIONAL GO</span>
-        <p class="text-gray-600 mb-4">Upload documents → AI search, Q&A, summarize. Market VN còn nhỏ, commoditization risk cao, nhưng vertical-specific có thể work.</p>
+        <div class="flex items-center gap-3 mb-3">
+            <h3 class="text-2xl font-bold">📄 AI Document RAG</h3>
+            <span class="verdict-conditional text-white text-xs font-bold px-3 py-1 rounded-full">🟡 CONDITIONAL</span>
+        </div>
+        <p class="text-gray-600">Upload documents → AI search, Q&A, summarize. VN market còn nhỏ, commoditization risk cao, chỉ nên làm nếu vertical-specific.</p>
+    </div>
 
-        <h4 class="font-bold mb-3">📊 Segments</h4>
-        <div class="space-y-2 mb-6">
-            <div class="flex items-center gap-3 bg-red-50 p-3 rounded-lg">
-                <span class="text-red-500 font-bold text-xs">🔴 HIGH</span>
-                <div class="flex-1"><strong>Legal</strong> — Law firms, in-house legal</div>
-                <span class="text-sm text-gray-500">2-10M VND/mo</span>
+    <!-- Market -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">📊 Thị Trường</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <div class="stat-card rounded-xl p-3 text-center">
+                <div class="text-xl font-black text-blue-700">$500M-1B</div>
+                <div class="text-xs text-gray-500">AI market VN</div>
             </div>
-            <div class="flex items-center gap-3 bg-red-50 p-3 rounded-lg">
-                <span class="text-red-500 font-bold text-xs">🔴 HIGH</span>
-                <div class="flex-1"><strong>Finance/Banking</strong> — Banks, FI</div>
-                <span class="text-sm text-gray-500">10-50M VND/mo</span>
+            <div class="stat-card rounded-xl p-3 text-center">
+                <div class="text-xl font-black text-blue-700">15-20%</div>
+                <div class="text-xs text-gray-500">Enterprise AI adoption</div>
             </div>
-            <div class="flex items-center gap-3 bg-yellow-50 p-3 rounded-lg">
-                <span class="text-yellow-500 font-bold text-xs">🟡 MED</span>
-                <div class="flex-1"><strong>Government</strong> — Agencies</div>
-                <span class="text-sm text-gray-500">Budget constraints</span>
+            <div class="stat-card rounded-xl p-3 text-center">
+                <div class="text-xl font-black text-blue-700">$5-10M</div>
+                <div class="text-xs text-gray-500">RAG-specific VN</div>
             </div>
-            <div class="flex items-center gap-3 bg-yellow-50 p-3 rounded-lg">
-                <span class="text-yellow-500 font-bold text-xs">🟡 MED</span>
-                <div class="flex-1"><strong>Healthcare</strong> — Hospitals, pharma</div>
-                <span class="text-sm text-gray-500">Medium</span>
+            <div class="stat-card rounded-xl p-3 text-center">
+                <div class="text-xl font-black text-red-600">Rất Early</div>
+                <div class="text-xs text-gray-500">Stage</div>
             </div>
         </div>
 
-        <h4 class="font-bold mb-3">⚠️ Major Risks</h4>
-        <div class="space-y-3 mb-6">
-            <div class="risk-high p-4 rounded-lg">
-                <strong>Big tech eats the space</strong> — Microsoft Copilot, Google AI improving fast. They have distribution + ecosystem.
+        <h4 class="font-bold text-sm mb-3">Segments theo Pain Level</h4>
+        <div class="space-y-2">
+            <div class="flex items-center gap-3 bg-red-50 p-3 rounded-lg text-sm">
+                <span class="text-red-600 font-bold w-16">🔴</span>
+                <div class="flex-1"><strong>Legal</strong> — 500+ firms, contracts, clauses search</div>
+                <span class="text-gray-500">2-10M VND/mo</span>
             </div>
-            <div class="risk-high p-4 rounded-lg">
-                <strong>Open source commoditization</strong> — AnythingLLM (30K+ ⭐), PrivateGPT (55K+ ⭐)越来越好. Barrier to entry dropping monthly.
+            <div class="flex items-center gap-3 bg-red-50 p-3 rounded-lg text-sm">
+                <span class="text-red-600 font-bold w-16">🔴</span>
+                <div class="flex-1"><strong>Finance/Banking</strong> — 50+ banks, compliance heavy</div>
+                <span class="text-gray-500">10-50M VND/mo</span>
             </div>
-            <div class="risk-medium p-4 rounded-lg">
-                <strong>Enterprise sales cycle 3-6 months</strong> — Cash flow risk for bootstrapped.
+            <div class="flex items-center gap-3 bg-yellow-50 p-3 rounded-lg text-sm">
+                <span class="text-yellow-600 font-bold w-16">🟡</span>
+                <div class="flex-1"><strong>Government</strong> — Large but slow, budget constraints</div>
+                <span class="text-gray-500">Medium</span>
+            </div>
+            <div class="flex items-center gap-3 bg-yellow-50 p-3 rounded-lg text-sm">
+                <span class="text-yellow-600 font-bold w-16">🟡</span>
+                <div class="flex-1"><strong>Healthcare</strong> — Hospitals, pharma protocols</div>
+                <span class="text-gray-500">Medium</span>
+            </div>
+            <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg text-sm">
+                <span class="text-gray-500 font-bold w-16">🟢</span>
+                <div class="flex-1"><strong>SME General</strong> — Price sensitive, hard to sell</div>
+                <span class="text-gray-500">Low</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pain Points -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">😣 Pain Points</h4>
+        <div class="space-y-2">
+            <div class="risk-high p-3 rounded-lg text-sm"><strong>🔴 Tài liệu rải rác</strong> — Google Drive, email, file server, giấy → Không tìm thấy</div>
+            <div class="risk-high p-3 rounded-lg text-sm"><strong>🔴 Search tiếng Việt kém</strong> — Keyword không hiểu ngữ nghĩa, synonym, context</div>
+            <div class="risk-high p-3 rounded-lg text-sm"><strong>🔴 Knowledge loss</strong> — Nhân viên nghỉ việc = knowledge đi theo</div>
+            <div class="risk-medium p-3 rounded-lg text-sm"><strong>🟡 Contract review</strong> — Tìm clause trong hàng trăm hợp đồng</div>
+            <div class="risk-medium p-3 rounded-lg text-sm"><strong>🟡 Compliance & audit</strong> — Chứng minh đã follow quy trình nào</div>
+        </div>
+    </div>
+
+    <!-- Competition -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">🏆 Đối Thủ — Rất đông & nguy hiểm</h4>
+        <p class="text-sm font-bold text-red-600 mb-3">⚠️ Đây là lý do chính score thấp — competition quá mạnh</p>
+
+        <details class="mb-3">
+            <summary class="font-bold text-sm text-indigo-600">Big Tech (Giấc mơ xa)</summary>
+            <div class="overflow-x-auto mt-2">
+                <table class="w-full text-sm">
+                    <thead><tr class="bg-gray-100"><th class="p-2 text-left">Tool</th><th class="p-2">Valuation</th><th class="p-2">Price</th><th class="p-2">VN Threat</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b"><td class="p-2"><strong>Glean</strong></td><td class="p-2">$4.6B</td><td class="p-2">$30-100/user</td><td class="p-2 text-yellow-600">Medium</td></tr>
+                        <tr class="border-b"><td class="p-2"><strong>MS Copilot</strong></td><td class="p-2">Built-in M365</td><td class="p-2">$30/user</td><td class="p-2 text-red-600">HIGH</td></tr>
+                        <tr class="border-b"><td class="p-2"><strong>Google AI</strong></td><td class="p-2">Built-in WS</td><td class="p-2">$20-30/user</td><td class="p-2 text-red-600">HIGH</td></tr>
+                        <tr class="border-b"><td class="p-2"><strong>ChatGPT Ent.</strong></td><td class="p-2">OpenAI</td><td class="p-2">$25-60/user</td><td class="p-2 text-yellow-600">Medium</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <details class="mb-3">
+            <summary class="font-bold text-sm text-red-600">Open Source (Threat lớn nhất ⚠️)</summary>
+            <div class="mt-2 space-y-2 text-sm">
+                <div class="bg-gray-50 p-3 rounded-lg"><strong>AnythingLLM</strong> — 30K+ ⭐, self-host, multi-user, free</div>
+                <div class="bg-gray-50 p-3 rounded-lg"><strong>PrivateGPT</strong> — 55K+ ⭐, privacy-first, on-premise, free</div>
+                <div class="bg-gray-50 p-3 rounded-lg"><strong>Dify</strong> — 50K+ ⭐, workflow builder, có RAG, free tier</div>
+                <div class="bg-gray-50 p-3 rounded-lg"><strong>ChatRTX</strong> — NVIDIA, local, free, chỉ cần RTX GPU</div>
+                <p class="text-red-600 italic mt-2">→ Mỗi tháng open source tốt hơn. Barrier to entry giảm liên tục.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary class="font-bold text-sm text-indigo-600">Việt Nam</summary>
+            <div class="mt-2 text-sm space-y-2">
+                <p><strong>FPT AI</strong> — Enterprise only, đắt, mature</p>
+                <p><strong>Viettel AI</strong> — B2G focus, không bán SME</p>
+                <p><strong>Zalo AI</strong> — Internal, không bán ngoài</p>
+                <p class="text-green-600">Gap: Tool RAG tiếng Việt tốt, SaaS, affordable cho mid-market (50-500 nhân viên)</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Technical -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">🔧 Technical</h4>
+        <div class="bg-gray-50 p-4 rounded-lg text-sm mb-4">
+            <p class="font-bold mb-2">RAG Architecture:</p>
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <div class="arch-box">Docs</div><span class="arch-arrow">→</span>
+                <div class="arch-box">Parser</div><span class="arch-arrow">→</span>
+                <div class="arch-box">Chunk</div><span class="arch-arrow">→</span>
+                <div class="arch-box">Embed</div><span class="arch-arrow">→</span>
+                <div class="arch-box">Vector DB</div>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-2 mt-2">
+                <div class="arch-box">Query</div><span class="arch-arrow">→</span>
+                <div class="arch-box">Embed</div><span class="arch-arrow">→</span>
+                <div class="arch-box">Search</div><span class="arch-arrow">→</span>
+                <div class="arch-box">LLM + Context</div><span class="arch-arrow">→</span>
+                <div class="arch-box">Answer</div>
             </div>
         </div>
 
-        <h4 class="font-bold mb-3">💡 Nếu làm thì</h4>
-        <ul class="list-disc list-inside space-y-1 text-gray-700">
-            <li>Vertical-specific (chỉ legal hoặc chỉ finance)</li>
-            <li>On-prem option (VN enterprise sợ cloud)</li>
-            <li>Consider làm <strong>feature</strong> trong product lớn hơn, không standalone</li>
-        </ul>
+        <details class="mb-3">
+            <summary class="font-bold text-sm text-indigo-600">Key Technical Challenges</summary>
+            <div class="mt-2 text-sm space-y-2">
+                <div class="risk-high p-3 rounded-lg"><strong>🔴 Vietnamese language quality</strong> — Embedding/LLM tiếng Việt vẫn kém hơn Anh. Solution: PhoBERT, BGE-M3, fine-tune</div>
+                <div class="risk-high p-3 rounded-lg"><strong>🔴 Hallucination</strong> — AI trả lời sai nhưng nghe hợp lý. Solution: Citation, grounding, confidence scoring</div>
+                <div class="risk-medium p-3 rounded-lg"><strong>🟡 OCR scanned docs</strong> — Tài liệu scan tiếng Việt. Solution: Tesseract VN + correction</div>
+            </div>
+        </details>
+
+        <details>
+            <summary class="font-bold text-sm text-indigo-600">LLM Options & Cost</summary>
+            <div class="overflow-x-auto mt-2">
+                <table class="w-full text-sm">
+                    <thead><tr class="bg-gray-100"><th class="p-2 text-left">LLM</th><th class="p-2">Cost</th><th class="p-2">VN Quality</th><th class="p-2">Privacy</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b"><td class="p-2">GPT-4o</td><td class="p-2">$2.5-5/M tok</td><td class="p-2">⭐⭐⭐⭐</td><td class="p-2">❌ Cloud</td></tr>
+                        <tr class="border-b"><td class="p-2">Claude 3.5</td><td class="p-2">$3/M tok</td><td class="p-2">⭐⭐⭐⭐</td><td class="p-2">❌ Cloud</td></tr>
+                        <tr class="border-b"><td class="p-2">Qwen2.5-72B</td><td class="p-2">~$500/mo GPU</td><td class="p-2">⭐⭐⭐⭐</td><td class="p-2">✅ On-prem</td></tr>
+                        <tr><td class="p-2">GPT-4o-mini</td><td class="p-2">$0.15/M tok</td><td class="p-2">⭐⭐⭐</td><td class="p-2">❌ Cloud</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">Cost per customer (1000 docs): ~$40-175/tháng</p>
+        </details>
+    </div>
+
+    <!-- Business Model -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">💰 Business Model</h4>
+        <div class="overflow-x-auto mb-4">
+            <table class="w-full text-sm">
+                <thead><tr class="bg-gray-100"><th class="p-3 text-left">Tier</th><th class="p-3">Price/tháng</th><th class="p-3 text-left">Target</th></tr></thead>
+                <tbody>
+                    <tr class="border-b"><td class="p-3 font-bold">Starter</td><td class="p-3">499K VND ($20)</td><td class="p-3">&lt;10 users, 500 docs, 1K queries</td></tr>
+                    <tr class="border-b"><td class="p-3 font-bold">Pro</td><td class="p-3">1.99M VND ($80)</td><td class="p-3">10-50 users, 5K docs, 10K queries</td></tr>
+                    <tr><td class="p-3 font-bold">Enterprise</td><td class="p-3">5-20M VND</td><td class="p-3">On-prem, unlimited, custom</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3 text-sm mb-4">
+            <div class="bg-yellow-50 p-3 rounded-lg"><strong>⚠️ ARPU:</strong> 1.5M VND ($60) — cao nhưng CAC cũng cao $120</div>
+            <div class="bg-yellow-50 p-3 rounded-lg"><strong>⚠️ Sales cycle:</strong> 3-6 tháng — cash flow risk</div>
+        </div>
+        <div class="risk-medium p-4 rounded-lg text-sm">
+            <strong>Bottom line:</strong> Revenue chậm hơn multi-channel (enterprise sales cycle). Y1 loss 960M, Y2 mới breakeven. <strong>Cần bootstrap với consulting revenue.</strong>
+        </div>
+    </div>
+
+    <!-- Score -->
+    <div class="bg-white rounded-2xl shadow p-6">
+        <h4 class="font-bold text-lg mb-4">🎯 Score Chi Tiết</h4>
+        <div class="space-y-3">
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Market Size</span><div class="flex-1 score-bar"><div class="score-fill bg-yellow-500" style="width:60%"></div></div><span class="text-sm font-bold w-12 text-right">6/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Competition</span><div class="flex-1 score-bar"><div class="score-fill bg-red-500" style="width:40%"></div></div><span class="text-sm font-bold w-12 text-right">4/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Tech Feasibility</span><div class="flex-1 score-bar"><div class="score-fill bg-blue-500" style="width:80%"></div></div><span class="text-sm font-bold w-12 text-right">8/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Profitability</span><div class="flex-1 score-bar"><div class="score-fill bg-yellow-500" style="width:60%"></div></div><span class="text-sm font-bold w-12 text-right">6/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Timing</span><div class="flex-1 score-bar"><div class="score-fill bg-yellow-500" style="width:50%"></div></div><span class="text-sm font-bold w-12 text-right">5/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Defensibility</span><div class="flex-1 score-bar"><div class="score-fill bg-red-500" style="width:40%"></div></div><span class="text-sm font-bold w-12 text-right">4/10</span></div>
+            <div class="flex items-center gap-3"><span class="w-36 text-sm">Scalability</span><div class="flex-1 score-bar"><div class="score-fill bg-yellow-500" style="width:50%"></div></div><span class="text-sm font-bold w-12 text-right">5/10</span></div>
+        </div>
     </div>
 </div>
 
-<!-- COMPARE -->
+<!-- ==================== COMPARE ==================== -->
 <div id="section-compare" class="section max-w-4xl mx-auto px-4 py-8 space-y-6">
 
     <div class="bg-white rounded-2xl shadow p-6">
-        <h3 class="text-xl font-bold mb-6 text-center">📊 So sánh 3 Ý tưởng</h3>
+        <h3 class="text-xl font-bold mb-6 text-center">📊 So Sánh Chi Tiết</h3>
 
         <div class="overflow-x-auto mb-8">
             <table class="w-full text-sm">
                 <thead><tr class="bg-gray-100"><th class="p-3 text-left">Tiêu chí</th><th class="p-3 text-center">🦐 Shrimp</th><th class="p-3 text-center">🛒 Selling</th><th class="p-3 text-center">📄 RAG</th></tr></thead>
                 <tbody>
-                    <tr class="border-b"><td class="p-3">Market Size</td><td class="p-3 text-center font-bold text-green-600">8</td><td class="p-3 text-center font-bold text-green-600">8</td><td class="p-3 text-center font-bold text-yellow-600">6</td></tr>
-                    <tr class="border-b"><td class="p-3">Competition</td><td class="p-3 text-center font-bold text-green-600">9</td><td class="p-3 text-center font-bold text-yellow-600">6</td><td class="p-3 text-center font-bold text-red-600">4</td></tr>
-                    <tr class="border-b"><td class="p-3">Tech Feasibility</td><td class="p-3 text-center">7</td><td class="p-3 text-center">7</td><td class="p-3 text-center font-bold text-green-600">8</td></tr>
-                    <tr class="border-b"><td class="p-3">Profitability</td><td class="p-3 text-center">7</td><td class="p-3 text-center font-bold text-green-600">8</td><td class="p-3 text-center">6</td></tr>
-                    <tr class="border-b"><td class="p-3">Timing</td><td class="p-3 text-center font-bold text-green-600">8</td><td class="p-3 text-center font-bold text-green-600">9</td><td class="p-3 text-center">5</td></tr>
-                    <tr class="border-b"><td class="p-3">Defensibility</td><td class="p-3 text-center font-bold text-green-600">8</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold text-red-600">4</td></tr>
+                    <tr class="border-b"><td class="p-3">Market Size</td><td class="p-3 text-center font-bold text-green-700">8</td><td class="p-3 text-center font-bold text-green-700">8</td><td class="p-3 text-center font-bold text-yellow-600">6</td></tr>
+                    <tr class="border-b"><td class="p-3">Competition</td><td class="p-3 text-center font-bold text-green-700">9</td><td class="p-3 text-center font-bold text-yellow-600">6</td><td class="p-3 text-center font-bold text-red-600">4</td></tr>
+                    <tr class="border-b"><td class="p-3">Tech Feasibility</td><td class="p-3 text-center">7</td><td class="p-3 text-center">7</td><td class="p-3 text-center font-bold text-green-700">8</td></tr>
+                    <tr class="border-b"><td class="p-3">Profitability</td><td class="p-3 text-center">7</td><td class="p-3 text-center font-bold text-green-700">8</td><td class="p-3 text-center">6</td></tr>
+                    <tr class="border-b"><td class="p-3">Timing</td><td class="p-3 text-center font-bold text-green-700">8</td><td class="p-3 text-center font-bold text-green-700">9</td><td class="p-3 text-center">5</td></tr>
+                    <tr class="border-b"><td class="p-3">Defensibility</td><td class="p-3 text-center font-bold text-green-700">8</td><td class="p-3 text-center">5</td><td class="p-3 text-center font-bold text-red-600">4</td></tr>
                     <tr class="border-b"><td class="p-3">Scalability</td><td class="p-3 text-center">7</td><td class="p-3 text-center">7</td><td class="p-3 text-center">5</td></tr>
-                    <tr class="bg-gray-50 font-bold"><td class="p-3">Tổng</td><td class="p-3 text-center text-xl text-amber-600">7.8</td><td class="p-3 text-center text-xl text-gray-600">7.1</td><td class="p-3 text-center text-xl text-orange-600">5.4</td></tr>
+                    <tr class="bg-gray-50 font-bold text-lg"><td class="p-3">TỔNG</td><td class="p-3 text-center text-amber-600">7.8</td><td class="p-3 text-center text-gray-600">7.1</td><td class="p-3 text-center text-orange-600">5.4</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <h4 class="font-bold mb-4">🎯 Recommendation</h4>
-        <div class="space-y-3">
-            <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl">
-                <div class="font-bold text-lg">🥇 Shrimp Farm App — <span class="text-green-600">Best Long-term</span></div>
-                <p class="text-sm text-gray-600 mt-1">Niche mạnh, competition gần = 0, data moat, VN-specific. eFishery sụp đổ = window mở lớn.</p>
+        <div class="overflow-x-auto mb-8">
+            <table class="w-full text-sm">
+                <thead><tr class="bg-gray-100"><th class="p-3 text-left">Dimension</th><th class="p-3 text-center">🦐 Shrimp</th><th class="p-3 text-center">🛒 Selling</th><th class="p-3 text-center">📄 RAG</th></tr></thead>
+                <tbody>
+                    <tr class="border-b"><td class="p-3">Time to Revenue</td><td class="p-3 text-center">6-12 tháng</td><td class="p-3 text-center text-green-700 font-bold">3-6 tháng</td><td class="p-3 text-center text-red-600">6-12 tháng</td></tr>
+                    <tr class="border-b"><td class="p-3">Investment Needed</td><td class="p-3 text-center">Medium</td><td class="p-3 text-center text-green-700 font-bold">Low</td><td class="p-3 text-center">Medium</td></tr>
+                    <tr class="border-b"><td class="p-3">Risk Level</td><td class="p-3 text-center text-yellow-600">Medium</td><td class="p-3 text-center text-yellow-600">Medium</td><td class="p-3 text-center text-red-600 font-bold">High</td></tr>
+                    <tr class="border-b"><td class="p-3">Exit Potential</td><td class="p-3 text-center">Medium</td><td class="p-3 text-center text-green-700 font-bold">High (acqui-hire)</td><td class="p-3 text-center text-red-600">Low</td></tr>
+                    <tr><td class="p-3">Team Needed</td><td class="p-3 text-center">1-2 devs</td><td class="p-3 text-center">1-2 devs</td><td class="p-3 text-center">2-3 + ML/AI</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4 class="font-bold text-lg mb-4">🎯 Recommendation</h4>
+        <div class="space-y-4">
+            <div class="bg-amber-50 border-2 border-amber-300 p-5 rounded-xl">
+                <div class="font-bold text-lg mb-1">🥇 Shrimp Farm App — <span class="text-green-700">Best Long-term Play</span></div>
+                <p class="text-sm text-gray-700 mb-2">Score: 7.8/10 — Niche mạnh, competition gần = 0, data moat mạnh, VN-specific</p>
+                <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+                    <li>eFishery sụp đổ = window mở rộng chưa từng có</li>
+                    <li>Chính phủ push traceability → farmer SẼ cần tool</li>
+                    <li>Dịch bệnh = pain point cực lớn, farmer mất tiền thật</li>
+                    <li>Data moat: Farm data積累 → giá trị tăng theo thời gian</li>
+                    <li>Risk: Willingness to pay, field sales</li>
+                </ul>
             </div>
-            <div class="bg-gray-50 border border-gray-200 p-4 rounded-xl">
-                <div class="font-bold text-lg">🥈 Multi-channel Selling — <span class="text-blue-600">Best Short-term</span></div>
-                <p class="text-sm text-gray-600 mt-1">Fast revenue (3-6 tháng), SaaS model khỏe, exit potential cao. Phải move fast.</p>
+            <div class="bg-gray-50 border-2 border-gray-300 p-5 rounded-xl">
+                <div class="font-bold text-lg mb-1">🥈 Multi-channel Selling — <span class="text-blue-700">Best Short-term Play</span></div>
+                <p class="text-sm text-gray-700 mb-2">Score: 7.1/10 — Fast revenue, SaaS model khỏe, exit potential cao</p>
+                <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+                    <li>TikTok Shop bùng nổ + multi-channel bắt buộc = perfect timing</li>
+                    <li>LTV/CAC 18x — unit economics rất tốt</li>
+                    <li>Gap rõ ràng: Sapo/KiotViet chậm, Pancake chỉ TikTok</li>
+                    <li>Breakeven Y2, scale to 50K users Y3</li>
+                    <li>Risk: Platform dependency, 6-month window</li>
+                    <li><strong>Exit: Acqui-hire bởi Sapo/KiotViet 2-3 năm</strong></li>
+                </ul>
             </div>
-            <div class="bg-orange-50 border border-orange-200 p-4 rounded-xl">
-                <div class="font-bold text-lg">🥉 AI Document RAG — <span class="text-orange-600">Conditional</span></div>
-                <p class="text-sm text-gray-600 mt-1">Chỉ nếu vertical-specific. Risk commoditization cao. Better làm feature cho product khác.</p>
+            <div class="bg-orange-50 border-2 border-orange-300 p-5 rounded-xl">
+                <div class="font-bold text-lg mb-1">🥉 AI Document RAG — <span class="text-orange-700">⚠️ Chỉ nếu Vertical-specific</span></div>
+                <p class="text-sm text-gray-700 mb-2">Score: 5.4/10 — Commoditization risk cao, big tech threatening</p>
+                <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+                    <li>Open source越来越好 — AnythingLLM, PrivateGPT giảm barrier monthly</li>
+                    <li>Microsoft Copilot, Google AI = distribution advantage khó beat</li>
+                    <li>Enterprise sales cycle 3-6 tháng = cash flow risk</li>
+                    <li><strong>Nếu làm: Chỉ Legal hoặc chỉ Finance + On-prem</strong></li>
+                    <li>Better: Làm feature cho product khác, không standalone</li>
+                </ul>
             </div>
+        </div>
+
+        <div class="mt-8 bg-indigo-50 border-2 border-indigo-200 p-6 rounded-xl text-center">
+            <h4 class="font-bold text-lg mb-2">💡 Final Call</h4>
+            <p class="text-gray-700">Nếu sếp có bandwidth cho 1 project: <strong class="text-indigo-700">Shrimp Farm App</strong> (long-term, moat mạnh nhất)</p>
+            <p class="text-gray-700 mt-1">Nếu muốn revenue nhanh song song: <strong class="text-blue-700">Multi-channel Selling</strong> (3-6 tháng có tiền)</p>
+            <p class="text-gray-700 mt-1">AI RAG: Hold, chờ thị trường mature hơn, hoặc làm feature integrate sau</p>
         </div>
     </div>
 </div>
@@ -282,6 +751,7 @@ function showTab(name) {
     const tab = document.getElementById('tab-' + name);
     tab.classList.add('tab-active');
     tab.classList.remove('text-gray-500');
+    window.scrollTo({ top: document.querySelector('.max-w-4xl').offsetTop - 20, behavior: 'smooth' });
 }
 </script>
 
